@@ -3,63 +3,7 @@
 import { Navbar } from '@/components/navbar'
 import Link from 'next/link'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
-
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Building Scalable Applications with Next.js 16',
-    description: 'Learn how to architect and build scalable web applications using the latest features in Next.js 16, including server components and improved caching strategies.',
-    date: 'Mar 5, 2026',
-    readTime: '8 min',
-    tags: ['Next.js', 'Web Development', 'Performance'],
-    slug: 'building-scalable-nextjs-16',
-  },
-  {
-    id: 2,
-    title: 'The Art of Writing Clean Code',
-    description: 'A deep dive into principles and practices that make code more maintainable, readable, and enjoyable for your team and future self.',
-    date: 'Mar 1, 2026',
-    readTime: '12 min',
-    tags: ['Best Practices', 'Code Quality', 'Development'],
-    slug: 'art-of-clean-code',
-  },
-  {
-    id: 3,
-    title: 'React Server Components: A Game Changer',
-    description: 'Exploring how React Server Components revolutionize how we build applications and the best practices for integrating them into your projects.',
-    date: 'Feb 25, 2026',
-    readTime: '10 min',
-    tags: ['React', 'Server Components', 'Frontend'],
-    slug: 'react-server-components',
-  },
-  {
-    id: 4,
-    title: 'Database Optimization Techniques',
-    description: 'Practical strategies for optimizing database queries, indexing, and overall performance to handle millions of requests efficiently.',
-    date: 'Feb 18, 2026',
-    readTime: '15 min',
-    tags: ['Database', 'Performance', 'Backend'],
-    slug: 'database-optimization',
-  },
-  {
-    id: 5,
-    title: 'Modern Authentication Patterns',
-    description: 'An overview of modern authentication approaches including JWT, OAuth, and session-based authentication with their pros and cons.',
-    date: 'Feb 12, 2026',
-    readTime: '11 min',
-    tags: ['Authentication', 'Security', 'Backend'],
-    slug: 'modern-auth-patterns',
-  },
-  {
-    id: 6,
-    title: 'CSS-in-JS vs Utility Classes: Making the Right Choice',
-    description: 'Comparing different styling approaches and exploring when to use CSS-in-JS solutions versus utility-first frameworks like Tailwind.',
-    date: 'Feb 5, 2026',
-    readTime: '9 min',
-    tags: ['CSS', 'Styling', 'Frontend'],
-    slug: 'css-approaches',
-  },
-]
+import { blogPosts } from '@/src/data/blogs'
 
 export default function BlogPage() {
   return (
@@ -166,7 +110,7 @@ export default function BlogPage() {
 
         {/* Newsletter */}
         <div className="mt-20 pt-12 border-t border-border">
-          <div className="bg-card border border-border rounded-lg p-8 text-center">
+          {/* <div className="bg-card border border-border rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">Subscribe to My Newsletter</h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
               Get notified when I publish new articles and insights about web development and tech.
@@ -184,7 +128,7 @@ export default function BlogPage() {
                 Subscribe
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

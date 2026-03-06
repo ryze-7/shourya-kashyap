@@ -6,58 +6,41 @@ import { ExternalLink, Github } from 'lucide-react'
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.',
-    tags: ['React', 'Next.js', 'PostgreSQL', 'Stripe'],
-    link: '#',
-    github: '#',
-    image: 'https://via.placeholder.com/400x250?text=E-Commerce+Platform',
+    title: 'Investment Ecosystem OSINT Analysis',
+    description: 'Investigated an investment ecosystem through OSINT, mapping digital footprints and infrastructure to uncover entity relationships.',
+    tags: ['OSINT', 'Cybersecurity', 'Threat Intelligence'],
+    link: 'https://github.com/ryze-7/osint-investment-platform-investigation',
+    // github: 'https://github.com/ryze-7/osint-investment-platform-investigation',
+    image: '/images/investigation-1.avif',
   },
   {
     id: 2,
-    title: 'AI Chat Application',
-    description: 'Real-time chat application with AI-powered responses using OpenAI API and WebSocket integration.',
-    tags: ['Next.js', 'TypeScript', 'OpenAI', 'WebSocket'],
-    link: '#',
-    github: '#',
-    image: 'https://via.placeholder.com/400x250?text=AI+Chat+App',
+    title: 'MyMarzi Travel Agency Website',
+    description: 'Modern travel website generating dynamic itineraries with responsive UI and API integrations.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind', 'React'],
+    link: 'https://github.com/ryze-7/tour-travel-nextjs',
+    // github: '#',
+    image: '/images/my-marzi.png',
   },
   {
     id: 3,
-    title: 'Task Management Dashboard',
-    description: 'Collaborative task management tool with real-time updates, team collaboration, and progress tracking.',
-    tags: ['React', 'Supabase', 'Tailwind', 'TypeScript'],
+    title: 'Digital Footprint & OSINT Reconnaissance',
+    description: 'Performed open-source intelligence reconnaissance to gather and analyze publicly available data',
+    tags: ['OSINT', 'Reconnaissance', 'Cybersecurity'],
     link: '#',
-    github: '#',
-    image: 'https://via.placeholder.com/400x250?text=Task+Dashboard',
+    // github: '#',
+    image: '/images/investigation-2.jpg',
   },
   {
     id: 4,
-    title: 'Data Visualization Tool',
-    description: 'Interactive dashboard for visualizing complex datasets with multiple chart types and filters.',
-    tags: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-    link: '#',
-    github: '#',
-    image: 'https://via.placeholder.com/400x250?text=Data+Viz+Tool',
+    title: 'AttendAI Smart Attendance System',
+    description: 'AI-powered classroom attendance system using face recognition and Raspberry Pi.',
+    tags: ['Python', 'Raspberry Pi', 'Arduino'],
+    link: 'https://github.com/ryze-7/attendai-dashboard',
+    // github: '#',
+    image: '/images/attend-ai-dark.png',
   },
-  {
-    id: 5,
-    title: 'Mobile Weather App',
-    description: 'Cross-platform weather application with real-time data, location services, and beautiful UI.',
-    tags: ['React Native', 'TypeScript', 'Weather API'],
-    link: '#',
-    github: '#',
-    image: 'https://via.placeholder.com/400x250?text=Weather+App',
-  },
-  {
-    id: 6,
-    title: 'API Authentication System',
-    description: 'Secure JWT-based authentication system with role-based access control and OAuth integration.',
-    tags: ['Node.js', 'Express', 'JWT', 'PostgreSQL'],
-    link: '#',
-    github: '#',
-    image: 'https://via.placeholder.com/400x250?text=Auth+System',
-  },
+  
 ]
 
 export default function ProjectsPage() {
@@ -83,14 +66,14 @@ export default function ProjectsPage() {
               className="group bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-all hover:shadow-lg hover:shadow-accent/10"
             >
               {/* Project Image */}
-              <div className="relative h-48 bg-background overflow-hidden">
+              {/* <div className="relative h-48 bg-background overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
+              </div> */}
 
               {/* Project Content */}
               <div className="p-6">
@@ -117,17 +100,12 @@ export default function ProjectsPage() {
                 <div className="flex items-center gap-4">
                   <a
                     href={project.link}
+                    target='_blank'
+                    rel='noopener noferrer'
                     className="inline-flex items-center gap-2 text-accent hover:text-emerald-400 transition-colors text-sm font-medium"
                   >
                     View Project
                     <ExternalLink className="w-4 h-4" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors text-sm font-medium"
-                  >
-                    Code
-                    <Github className="w-4 h-4" />
                   </a>
                 </div>
               </div>

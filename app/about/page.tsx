@@ -11,8 +11,8 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">About Me</h1>
-          <p className="text-lg text-accent font-mono">Full-stack developer & tech enthusiast</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Hi, I'm Shourya Kashyap</h1>
+          <p className="text-lg text-accent font-mono">Offensive Security Researcher & Pentesting Enthusiast</p>
         </div>
 
         {/* Main Content */}
@@ -22,15 +22,17 @@ export default function AboutPage() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">Who I Am</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I'm a passionate full-stack developer with a strong foundation in modern web technologies. 
-                I love building intuitive, performant applications that solve real-world problems. My journey 
-                in tech started with curiosity about how things work, and it's evolved into a career dedicated 
-                to creating meaningful digital experiences.
+                I'm a computer science student and security-focused developer with 
+                a strong interest in offensive security, network penetration 
+                testing, and OSINT. I enjoy analyzing attack surfaces, studying 
+                how systems can be exploited, and building hands-on labs to explore 
+                real-world security concepts.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Beyond coding, I'm constantly learning new technologies, contributing to open-source projects, 
-                and sharing my knowledge through writing and mentoring. I believe in the power of continuous 
-                improvement and collaboration.
+                Alongside security research, I build full-stack applications and 
+                technical systems, combining modern web development with 
+                security-focused thinking while continuously learning and 
+                experimenting with new technologies.
               </p>
             </section>
 
@@ -38,27 +40,24 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold text-foreground mb-4">My Experience</h2>
               <div className="space-y-6">
                 <div className="pb-6 border-b border-border">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Senior Developer</h3>
-                  <p className="text-sm text-accent font-mono mb-2">2022 - Present</p>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Cybersecurity Labs & Research</h3>
+                  <p className="text-sm text-accent font-mono mb-2">2024 – Present</p>
                   <p className="text-muted-foreground text-sm">
-                    Led development of scalable web applications, mentored junior developers, 
-                    and architected backend systems handling millions of requests daily.
+                    Offensive security researcher building practical labs for pentesting, OSINT, and vulnerability analysis.
                   </p>
                 </div>
                 <div className="pb-6 border-b border-border">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Full-Stack Developer</h3>
-                  <p className="text-sm text-accent font-mono mb-2">2020 - 2022</p>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Full-Stack Development Projects</h3>
+                  <p className="text-sm text-accent font-mono mb-2">2023 – Present</p>
                   <p className="text-muted-foreground text-sm">
-                    Built full-stack features from design to deployment. Worked with React, Node.js, 
-                    and various databases. Improved application performance by 40%.
+                    Building scalable Next.js and React apps with TypeScript, focusing on performance and clean UI/UX.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Junior Developer</h3>
-                  <p className="text-sm text-accent font-mono mb-2">2019 - 2020</p>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Systems & IoT Development</h3>
+                  <p className="text-sm text-accent font-mono mb-2">2024 – Present</p>
                   <p className="text-muted-foreground text-sm">
-                    Started my career working on frontend features and bug fixes. Learned best practices 
-                    and gained experience working in a team environment.
+                    Built IoT solutions with Raspberry Pi and microcontrollers, from hardware integration to real-time monitoring.
                   </p>
                 </div>
               </div>
@@ -68,12 +67,11 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold text-foreground mb-4">What I'm Passionate About</h2>
               <ul className="space-y-3">
                 {[
-                  'Building scalable, maintainable web applications',
-                  'Creating intuitive user interfaces and experiences',
-                  'Open-source contributions and community building',
-                  'Teaching and mentoring the next generation of developers',
-                  'Exploring new technologies and best practices',
-                  'Writing technical articles and sharing knowledge',
+                  'Passionate about penetration testing and offensive security',
+                  'Exploring how Linux systems can be attacked and secured',
+                  'Studying attack surfaces and real-world vulnerability techniques',
+                  'Learning how defenders detect and respond to cyber attacks',
+                  'Building hands-on security labs and experimenting with tools',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -91,21 +89,21 @@ export default function AboutPage() {
               <h3 className="text-lg font-semibold text-foreground mb-4">Skills</h3>
               <div className="space-y-3">
                 <div>
+                  <p className="text-sm font-medium text-accent mb-2">Systems & Security</p>
+                  <p className="text-xs text-muted-foreground">
+                    Linux, Network Security, Penetration Testing, OSINT
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-accent mb-2">Hardware & IoT</p>
+                  <p className="text-xs text-muted-foreground">
+                    Raspberry Pi, Arduino,
+                  </p>
+                </div>
+                <div>
                   <p className="text-sm font-medium text-accent mb-2">Frontend</p>
                   <p className="text-xs text-muted-foreground">
-                    React, Next.js, TypeScript, Tailwind CSS, Vue.js
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-accent mb-2">Backend</p>
-                  <p className="text-xs text-muted-foreground">
-                    Node.js, Express, Python, PostgreSQL, MongoDB
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-accent mb-2">DevOps</p>
-                  <p className="text-xs text-muted-foreground">
-                    Docker, AWS, CI/CD, Git, Linux
+                    React, Next.js, Tailwind
                   </p>
                 </div>
               </div>
@@ -117,23 +115,23 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <div>
                   <p className="text-sm font-medium text-foreground">Computer Science</p>
-                  <p className="text-xs text-accent font-mono">University Name</p>
-                  <p className="text-xs text-muted-foreground">2016 - 2019</p>
+                  <p className="text-xs text-accent font-mono">SRM University, Delhi-NCR</p>
+                  <p className="text-xs text-muted-foreground">2023 - 2027</p>
                 </div>
               </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               <div className="bg-card border border-border rounded-lg p-4 text-center">
                 <p className="text-2xl font-bold text-accent mb-1">50+</p>
                 <p className="text-xs text-muted-foreground">Projects</p>
               </div>
               <div className="bg-card border border-border rounded-lg p-4 text-center">
-                <p className="text-2xl font-bold text-accent mb-1">5+</p>
+                <p className="text-2xl font-bold text-accent mb-1">2+</p>
                 <p className="text-xs text-muted-foreground">Years Exp.</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -145,7 +143,7 @@ export default function AboutPage() {
             Feel free to reach out!
           </p>
           <a
-            href="mailto:your@email.com"
+            href="mailto:shourya.kashyap.05gmail.com"
             className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-emerald-500 transition-colors"
           >
             Send Me an Email
