@@ -2,6 +2,42 @@
 
 import { useEffect, useState } from 'react'
 
+function TerminalText() {
+  const messages = ['INITIALIZING...', 'LOADING MODULES...', 'ESTABLISHING CONNECTION...', 'ACCESS GRANTED.']
+  const [text, setText] = useState('')
+  const [msgIndex, setMsgIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [deleting, setDeleting] = useState(false)
+
+  useEffect(() => {
+    const current = messages[msgIndex]
+
+    const timeout = setTimeout(() => {
+      if (!deleting) {
+        setText(current.slice(0, charIndex + 1))
+        if (charIndex + 1 === current.length) {
+          setTimeout(() => setDeleting(true), 600)
+        } else {
+          setCharIndex((c) => c + 1)
+        }
+      } else {
+        setText(current.slice(0, charIndex - 1))
+        if (charIndex - 1 === 0) {
+          setDeleting(false)
+          setMsgIndex((m) => (m + 1) % messages.length)
+          setCharIndex(0)
+        } else {
+          setCharIndex((c) => c - 1)
+        }
+      }
+    }, deleting ? 30 : 60)
+
+    return () => clearTimeout(timeout)
+  }, [charIndex, deleting, msgIndex])
+
+  return <span>{text}<span className="animate-pulse">_</span></span>
+}
+
 export function LoadingScreen() {
   const [isVisible, setIsVisible] = useState(true)
   const [isExiting, setIsExiting] = useState(false)
@@ -62,8 +98,8 @@ export function LoadingScreen() {
         </div> */}
 
         {/* Loading text */}
-        <div className="text-sm text-muted-foreground font-mono tracking-widest">
-          INITIALIZING...
+        <div className="text-sm text-muted-foreground font-mono tracking-widest h-5">
+          <TerminalText />
         </div>
 
         {/* Progress bar */}

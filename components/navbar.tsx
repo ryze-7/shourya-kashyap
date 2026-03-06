@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Github, Linkedin, Twitter, Menu, X, Youtube } from 'lucide-react'
+import { Github, Linkedin, Menu, X, Youtube } from 'lucide-react'
 import { useState } from 'react'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export function Navbar() {
   const pathname = usePathname()
@@ -47,7 +48,7 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Social Icons */}
+          {/* Desktop Social Icons + Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
             <a
               href="https://github.com/ryze-7"
@@ -76,16 +77,20 @@ export function Navbar() {
             >
               <Youtube className="w-5 h-5" />
             </a>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-muted-foreground hover:text-accent transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-muted-foreground hover:text-accent transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -108,7 +113,7 @@ export function Navbar() {
               ))}
               <div className="border-t border-border pt-4 flex items-center gap-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/ryze-7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-accent transition-colors"
@@ -117,7 +122,7 @@ export function Navbar() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/shourya-k-7477a4229/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-accent transition-colors"
@@ -126,13 +131,13 @@ export function Navbar() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://www.youtube.com/@ryze07"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-accent transition-colors"
-                  aria-label="Twitter"
+                  aria-label="YouTube"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Youtube className="w-5 h-5" />
                 </a>
               </div>
             </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import { TypingText } from '@/components/typing-text'
 import { Navbar } from '@/components/navbar'
 import Link from 'next/link'
 import { ArrowRight, Code2, Zap, BookOpen } from 'lucide-react'
@@ -15,6 +16,7 @@ export default function Home() {
         <div className="space-y-8 mb-20">
           <div>
             <p className="text-accent font-mono text-sm mb-4">Hello, I'm Shourya Kashyap</p>
+            <TypingText />
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Cybersecurity student &<br />
               <span className="text-accent">OSINT / Defense researcher</span>

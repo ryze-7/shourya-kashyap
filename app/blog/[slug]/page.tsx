@@ -65,13 +65,14 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             style={{ color: 'var(--fg-muted)' }}
             dangerouslySetInnerHTML={{
               __html: post.content
-                .replace(/<h2>/g, '<h2 style="font-size:1.25rem;font-weight:700;color:#fff;margin-top:2.5rem;margin-bottom:0.75rem;">')
-                .replace(/<h3>/g, '<h3 style="font-size:1rem;font-weight:600;color:#fff;margin-top:1.5rem;margin-bottom:0.5rem;">')
+                .replace(/<h2>/g, '<h2 style="font-size:1.25rem;font-weight:700;color:inherit;margin-top:2.5rem;margin-bottom:0.75rem;">')
+                .replace(/<h3>/g, '<h3 style="font-size:1rem;font-weight:600;color:inherit;margin-top:1.5rem;margin-bottom:0.5rem;">')
                 .replace(/<p>/g, '<p style="margin-bottom:1rem;line-height:1.8;font-size:0.9rem;">')
                 .replace(/<ul>/g, '<ul style="list-style:disc;padding-left:1.5rem;margin-bottom:1rem;">')
                 .replace(/<li>/g, '<li style="margin-bottom:0.4rem;font-size:0.9rem;line-height:1.7;">')
-                .replace(/<code>/g, '<code style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);padding:0.1rem 0.4rem;border-radius:3px;font-size:0.8rem;color:var(--accent);">')
-                .replace(/<pre>/g, '<pre style="background:#111;border:1px solid rgba(255,255,255,0.08);padding:1rem;border-radius:4px;overflow-x:auto;margin-bottom:1rem;font-size:0.8rem;">')
+                .replace(/<code>/g, '<code style="background:var(--muted);border:1px solid var(--border);padding:0.1rem 0.4rem;border-radius:3px;font-size:0.8rem;color:var(--accent);">')
+                .replace(/<pre>/g, '<pre style="background:var(--muted);border:1px solid var(--border);padding:1rem;border-radius:4px;overflow-x:auto;margin-bottom:1rem;font-size:0.8rem;">')
+                .replace(/<strong>/g, '<strong style="font-weight:600;">')
             }}
           />
         </div>

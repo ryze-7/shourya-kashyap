@@ -1,5 +1,5 @@
 'use client'
-
+import { TypingText } from '@/components/typing-text'
 import { Navbar } from '@/components/navbar'
 import { CheckCircle2 } from 'lucide-react'
 
@@ -12,7 +12,16 @@ export default function AboutPage() {
         {/* Header */}
         <div className="mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Hi, I'm Shourya Kashyap</h1>
-          <p className="text-lg text-accent font-mono">Offensive Security Researcher & Pentesting Enthusiast</p>
+          <TypingText
+            strings={[
+              'Offensive Security Researcher',
+              'OSINT Investigator',
+              'Network Pentester',
+              'Blue Team Defender',
+              'Hardware Hacker',
+            ]}
+            className="text-lg text-accent font-mono"
+          />
         </div>
 
         {/* Main Content */}

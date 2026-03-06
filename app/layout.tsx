@@ -3,29 +3,20 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LoadingScreen } from '@/components/loading-screen'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Developer Portfolio | Full-Stack Developer',
-  description: 'Full-stack developer showcasing projects, articles, and expertise in modern web technologies.',
-  generator: 'v0.app',
-  keywords: ['developer', 'portfolio', 'web development', 'full-stack', 'React', 'Next.js'],
+  title: 'Shourya Kashyap | Cybersecurity Researcher',
+  description: 'Cybersecurity student focused on OSINT, network pentesting, and red team research.',
+  keywords: ['cybersecurity', 'OSINT', 'pentesting', 'network security', 'red team'],
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
+      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     apple: '/apple-icon.png',
   },
@@ -37,11 +28,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body className="font-sans antialiased">
-        <LoadingScreen />
-        {children}
-        <Analytics />
+        <ThemeProvider>
+          <LoadingScreen />
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
