@@ -63,6 +63,205 @@ export const blogPosts: BlogPost[] = [
       <p>This project helped me understand how OSINT can reveal hidden relationships and infrastructure patterns within digital ecosystems. It strengthened my ability to analyze publicly available intelligence, map attack surfaces, and evaluate potential security risks from exposed information.</p>
       `,
   },
+  {
+    id: 3,
+    title: 'Practical Nmap Cheat Sheet for Network Reconnaissance',
+    description: 'A practical Nmap reference guide covering host discovery, port scanning, service detection, NSE scripts, and useful scanning techniques used during reconnaissance.',
+    date: 'Mar 2026',
+    readTime: '12 min',
+    tags: ['Nmap', 'Reconnaissance', 'Network Security'],
+    slug: 'nmap-reconnaissance-cheatsheet',
+    author: 'Shourya Kashyap',
+    content: `
+    <p>During network reconnaissance, identifying live hosts, open ports, and running services is one of the most important steps. One of the most widely used tools for this purpose is <strong>Nmap (Network Mapper)</strong>.</p>
+
+    <p>Nmap is a free and open-source utility designed for <strong>network discovery and security auditing</strong>. It allows security researchers and system administrators to analyze networks, detect exposed services, and understand the attack surface of a system.</p>
+
+    <p>This article serves as a practical cheat sheet of commonly used Nmap techniques I explored while studying network reconnaissance.</p>
+
+    <h2>Host Discovery</h2>
+
+    <p>Host discovery helps identify which machines in a network are online before performing port scans.</p>
+
+    <pre><code># Ping scan
+  nmap -sn &lt;target&gt;
+  </code></pre>
+
+    <p>Scan an entire subnet using CIDR notation:</p>
+
+    <pre><code>nmap -sn 192.168.0.1/24</code></pre>
+
+    <h2>Traceroute</h2>
+
+    <p>Traceroute can be used to identify intermediate network nodes between the scanning system and the target.</p>
+
+    <pre><code>nmap -sn --traceroute google.com</code></pre>
+
+    <h2>DNS Enumeration Using NSE</h2>
+
+    <p>Nmap includes the Nmap Scripting Engine (NSE), which allows additional enumeration capabilities.</p>
+
+    <p>Brute forcing DNS subdomains:</p>
+
+    <pre><code>nmap --script dns-brute &lt;target&gt;</code></pre>
+
+    <h2>Broadcast Host Discovery</h2>
+
+    <p>Broadcast-based discovery can be used to identify active machines on local networks.</p>
+
+    <pre><code>nmap -sn --script broadcast-ping 192.168.0.1/24</code></pre>
+
+    <h2>Basic Port Scanning</h2>
+
+    <pre><code>nmap scanme.nmap.org</code></pre>
+
+    <p>This performs a default scan of the most common ports.</p>
+
+    <h2>Port States Explained</h2>
+
+    <ul>
+    <li><strong>Open</strong> — A service is actively listening</li>
+    <li><strong>Closed</strong> — No service is running on the port</li>
+    <li><strong>Filtered</strong> — Firewall is blocking probes</li>
+    <li><strong>Unfiltered</strong> — Port is reachable but its state cannot be determined</li>
+    <li><strong>Open/Filtered</strong> — Could be open or filtered</li>
+    <li><strong>Closed/Filtered</strong> — Could be closed or filtered</li>
+    </ul>
+
+    <h2>Skipping Host Discovery</h2>
+
+    <p>If ICMP is blocked, Nmap may think a host is offline. The following option treats the host as online.</p>
+
+    <pre><code>nmap -Pn scanme.nmap.org</code></pre>
+
+    <h2>DNS Configuration</h2>
+
+    <p>Use custom DNS servers:</p>
+
+    <pre><code>nmap --dns-servers 8.8.8.8,8.8.4.4 scanme.nmap.org</code></pre>
+
+    <p>Disable DNS resolution to speed up scans:</p>
+
+    <pre><code>nmap -n scanme.nmap.org</code></pre>
+
+    <h2>Privileged vs Unprivileged Scans</h2>
+
+    <p>Privileged users can perform SYN stealth scans, while unprivileged users perform TCP connect scans.</p>
+
+    <p>Unprivileged scans generally take longer to complete.</p>
+
+    <h2>Scanning Specific Ports</h2>
+
+    <p>Scan specific ports:</p>
+
+    <pre><code>nmap -p80,443 localhost</code></pre>
+
+    <p>Scan a port range:</p>
+
+    <pre><code>nmap -p1-100 localhost</code></pre>
+
+    <p>Scan all ports:</p>
+
+    <pre><code>nmap -p- localhost</code></pre>
+
+    <p>Scan ports by protocol:</p>
+
+    <pre><code>nmap -pT:25,U:23 &lt;target&gt;</code></pre>
+
+    <p>Scan by service name:</p>
+
+    <pre><code>nmap -p smtp &lt;target&gt;</code></pre>
+
+    <p>Scan service names with wildcards:</p>
+
+    <pre><code>nmap -p smtp* &lt;target&gt;</code></pre>
+
+    <h2>Selecting Network Interfaces</h2>
+
+    <pre><code>nmap -e &lt;interface&gt; &lt;target&gt;</code></pre>
+
+    <h2>Excluding Hosts from Scans</h2>
+
+    <pre><code>nmap 192.168.1.1-255 --exclude 192.168.1.1,192.168.1.2</code></pre>
+
+    <p>Using an exclusion file:</p>
+
+    <pre><code>nmap --exclude-file exclude.txt 192.168.1.1-255</code></pre>
+
+    <h2>Using Target Lists</h2>
+
+    <pre><code>nmap -iL targets.txt</code></pre>
+
+    <h2>Service Detection</h2>
+
+    <pre><code>nmap -sV &lt;target&gt;</code></pre>
+
+    <h2>Operating System Detection</h2>
+
+    <pre><code>nmap -O &lt;target&gt;</code></pre>
+
+    <p>Force OS guessing:</p>
+
+    <pre><code>nmap -O --osscan-guess &lt;target&gt;</code></pre>
+
+    <h2>Version Detection Intensity</h2>
+
+    <pre><code>nmap -sV --version-intensity 9 &lt;target&gt;</code></pre>
+
+    <h2>Aggressive Scan Mode</h2>
+
+    <p>This enables OS detection, version detection, script scanning, and traceroute.</p>
+
+    <pre><code>nmap -A &lt;target&gt;</code></pre>
+
+    <h2>Verbose Mode</h2>
+
+    <pre><code>nmap -v &lt;target&gt;</code></pre>
+
+    <h2>NSE Script Categories</h2>
+
+    <ul>
+    <li>auth</li>
+    <li>broadcast</li>
+    <li>brute</li>
+    <li>default</li>
+    <li>discovery</li>
+    <li>dos</li>
+    <li>exploit</li>
+    <li>external</li>
+    <li>fuzzer</li>
+    <li>intrusive</li>
+    <li>malware</li>
+    <li>safe</li>
+    <li>version</li>
+    <li>vuln</li>
+    </ul>
+
+    <h2>NSE Script Examples</h2>
+
+    <pre><code>nmap -sV --script vuln &lt;target&gt;</code></pre>
+
+    <pre><code>nmap -sV --script="version,discovery" &lt;target&gt;</code></pre>
+
+    <pre><code>nmap -sV --script="not version" &lt;target&gt;</code></pre>
+
+    <pre><code>nmap -sV --script="(http-*) and not(http-slowloris)" &lt;target&gt;</code></pre>
+
+    <h2>Debugging NSE Scripts</h2>
+
+    <pre><code>nmap -sC --script-trace &lt;target&gt;</code></pre>
+
+    <h2>Scanning Random Internet Hosts</h2>
+
+    <pre><code>nmap -iR 10</code></pre>
+
+    <h2>Final Thoughts</h2>
+
+    <p>Nmap remains one of the most important tools for network reconnaissance. From simple host discovery to advanced service detection and scripting, it provides extensive capabilities for analyzing network infrastructure and identifying exposed services.</p>
+
+    <p>Understanding these commands and techniques can significantly improve the effectiveness of security assessments and network analysis.</p>
+    `
+  }
 ]
 
 // Helper to get a post by slug

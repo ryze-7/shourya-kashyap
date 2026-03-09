@@ -27,23 +27,23 @@ export default function BlogPage() {
               <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-mono rounded">Featured</span>
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
-              {blogPosts[0].title}
+              {blogPosts[2].title}
             </h2>
             <p className="text-muted-foreground mb-6 text-lg">
-              {blogPosts[0].description}
+              {blogPosts[2].description}
             </p>
             <div className="flex flex-wrap gap-4 items-center mb-6">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="w-4 h-4" />
-                {blogPosts[0].date}
+                {blogPosts[2].date}
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="w-4 h-4" />
-                {blogPosts[0].readTime} read
+                {blogPosts[2].readTime} read
               </div>
             </div>
             <div className="flex flex-wrap gap-2 mb-6">
-              {blogPosts[0].tags.map((tag) => (
+              {blogPosts[2].tags.map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1 text-xs font-mono bg-background border border-accent/30 text-accent rounded hover:border-accent transition-colors"
@@ -53,7 +53,7 @@ export default function BlogPage() {
               ))}
             </div>
             <Link
-              href={`/blog/${blogPosts[0].slug}`}
+              href={`/blog/${blogPosts[2].slug}`}
               className="inline-flex items-center gap-2 text-accent hover:text-emerald-400 transition-colors font-medium"
             >
               Read Article
