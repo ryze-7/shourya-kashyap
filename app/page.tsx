@@ -103,7 +103,7 @@ export default function Home() {
         <div className="bg-card border border-border rounded-lg p-8">
           <h2 className="text-xl font-semibold text-foreground mb-6">Tools & Stack</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {['Linux', 'SIEM', 'Nmap', 'Metasploit', 'Wireshark'].map((tech) => (
+            {['Kali Linux', 'Splunk', 'Reconnaissance', 'Wireshark'].map((tech) => (
               <div
                 key={tech}
                 className="px-4 py-2 bg-background border border-border rounded text-center text-sm text-accent font-mono hover:bg-background/80 transition-colors"
